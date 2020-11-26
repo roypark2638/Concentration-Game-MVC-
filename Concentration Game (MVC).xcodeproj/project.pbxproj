@@ -13,6 +13,8 @@
 		97C64678256F8B6300362AD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C64676256F8B6300362AD9 /* Main.storyboard */; };
 		97C6467A256F8B6400362AD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C64679256F8B6400362AD9 /* Assets.xcassets */; };
 		97C6467D256F8B6400362AD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C6467B256F8B6400362AD9 /* LaunchScreen.storyboard */; };
+		97C64686256F97FD00362AD9 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C64685256F97FD00362AD9 /* Concentration.swift */; };
+		97C6468A256F986C00362AD9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C64689256F986C00362AD9 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		97C64679256F8B6400362AD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C6467C256F8B6400362AD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C6467E256F8B6400362AD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97C64685256F97FD00362AD9 /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
+		97C64689256F986C00362AD9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			children = (
 				97C64670256F8B6300362AD9 /* AppDelegate.swift */,
 				97C64672256F8B6300362AD9 /* SceneDelegate.swift */,
+				97C64685256F97FD00362AD9 /* Concentration.swift */,
+				97C64689256F986C00362AD9 /* Card.swift */,
 				97C64674256F8B6300362AD9 /* ViewController.swift */,
 				97C64676256F8B6300362AD9 /* Main.storyboard */,
 				97C64679256F8B6400362AD9 /* Assets.xcassets */,
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				97C64675256F8B6300362AD9 /* ViewController.swift in Sources */,
+				97C64686256F97FD00362AD9 /* Concentration.swift in Sources */,
+				97C6468A256F986C00362AD9 /* Card.swift in Sources */,
 				97C64671256F8B6300362AD9 /* AppDelegate.swift in Sources */,
 				97C64673256F8B6300362AD9 /* SceneDelegate.swift in Sources */,
 			);
