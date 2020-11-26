@@ -11,11 +11,6 @@ Lecture from Stanfrod University iOS course
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -71,7 +66,7 @@ Lecture from Stanfrod University iOS course
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![](http://g.recordit.co/mTWCzhjA6p.gif)
+![](http://g.recordit.co/MqsHaaPcAw.gif)
 
 
 
