@@ -66,7 +66,13 @@ Lecture from Stanfrod University iOS course
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+This is a concentration game.
+This application made with MVC model.
+Every time new game started, the cards are shuffled with a set of images.
+
 ![](http://g.recordit.co/MqsHaaPcAw.gif)
+
+
 
 
 
@@ -78,7 +84,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Installation
 
-1. Clone the repo
+Clone the repo
    ```sh
    git clone https://github.com/roypark2638/Concentration-Game-MVC-.git
    ```
