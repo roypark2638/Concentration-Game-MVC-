@@ -9,27 +9,29 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+    private lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
     
-    var flipCount = 0 { didSet { flipCountLabel.text = "Flip Count: \(flipCount)" } }
+    private(set) var flipCount = 0 { didSet { flipCountLabel.text = "Flip Count: \(flipCount)" } }
     
-    @IBOutlet var cardButtons: [UIButton]!
-    @IBOutlet weak var playAgainButton: UIButton!
+    @IBOutlet private var cardButtons: [UIButton]!
+    @IBOutlet private weak var playAgainButton: UIButton!
         
-    @IBOutlet weak var flipCountLabel: UILabel!
+    @IBOutlet private weak var flipCountLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         playAgainButton.isHidden = true
     }
     
-    @IBAction func CardPressed(_ sender: UIButton) {
+    @IBAction private func CardPressed(_ sender: UIButton) {
         
-        flipCount += 1
         if let cardNumber = cardButtons.firstIndex(of: sender) {
+            if !game.cards[cardNumber].isMatched {
+                flipCount += 1
+            }
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
-            let gameStatus = game.isGameEned()
+            let gameStatus = game.isGameEnded()
             if gameStatus == true {
                 playAgainButton.isHidden = false
             }
@@ -39,7 +41,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func playAgainPressed(_ sender: UIButton) {
+    @IBAction private func playAgainPressed(_ sender: UIButton) {
         game.resetGame()
         self.flipCount = 0
         game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
@@ -48,7 +50,7 @@ class ViewController: UIViewController {
         
     }
     
-    func updateViewFromModel() {
+    private func updateViewFromModel() {
         for index in cardButtons.indices {
             let button = cardButtons[index]
             let card = game.cards[index]
@@ -61,19 +63,34 @@ class ViewController: UIViewController {
             }
         }
     }
-    var emojiChoices = ["👾","💩","😈","👻","👽","🤡","🤠","👅","🦷","💋","👒"]
-    func resetEmojises() {
+    private var emojiChoices = ["👾","💩","😈","👻","👽","🤡","🤠","👅","🦷","💋","👒"]
+    private func resetEmojises() {
         emojiChoices = ["👾","💩","😈","👻","👽","🤡","🤠","👅","🦷","💋","👒"]
     }
     
-    var emoji = [Int:String]()
-    func emoji(for card: Card) -> String {
-        if game.isGameEned() { resetEmojises() }
-        if emoji[card.identifier] == nil , emojiChoices.count > 0 {
-                let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
-                emoji[card.identifier] = emojiChoices.remove(at: randomIndex)
+    private var emoji = [Card:String]()
+    private func emoji(for card: Card) -> String {
+        if game.isGameEnded() { resetEmojises() }
+        
+        if emoji[card] == nil , emojiChoices.count > 0 {
+            let emojiIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.acr4random)
+            emoji[card] = emojiChoices.remove(at: emojiIndex)
             }
-        return emoji[card.identifier] ?? "?"
+        return emoji[card] ?? "?"
+    }
+}
+
+extension Int {
+    var acr4random: Int {
+        if self > 0 {
+            return Int(arc4random_uniform(UInt32(self)))
+        }
+        else if self < 0 {
+            return -Int(arc4random_uniform(UInt32(abs(self))))
+        }
+        else {
+            return 0
+        }
     }
 }
 
